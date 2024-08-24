@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>My B+ Tree Visualization</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="working.js"></script>
+    </head>
+
+    <body>
+        <div id="bodyTitle" class="content">
+            <h1>B+ Tree Visualization<br><br>
+                <font size="3px"><p>This page visualizes the methods of a B+ Tree, based on the algorithms from the book<br>
+                <i>Database System Concepts, 7<sup> th</sup> Edition</i> by Avi Silberschatz, Henry F. Korth and S. Sudarshan, 
+                published by McGraw-Hill</p></font>
+            </h1>
+            <p align="center">Scroll down for more!<div class="arrow arrow-first"></div>
+                <div class="arrow arrow-second"></div></p>
+        </div>
+        <div id="bodyMain" class="content">
+            <div id="info">
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><p class="left"><i><font size="4px">What is a B+ Tree?</font></i><br><br>
+                A B+ Tree is a self-balancing, ordered tree data structure that allows searches, sequential access, insertions and deletions in O(logn). In a B+ 
+                Tree, data pointers are stored only at the leaf nodes of the tree, resulting in a very high fanout (number of pointers to child nodes in a node, 
+                typically on the order of 100 or more), which reduces the number of I/O operations required to find an element in the tree.</p><br><br>
+                <p class="more"><img src="https://media.geeksforgeeks.org/wp-content/uploads/20240217104748/1.png" height="200" width="700"><br>
+                An example of a B+ Tree</p><br><br>
+                <p class="rightTitle"><i><font size="4px">Why should I use a B+ Tree?</font></i></p>
+                <p class="right">A B+ Tree is an 
+                optimal selection for systems that read and write large blocks of data, e.x. filesystems, since it automatically reorganizes itself with small, 
+                local changes in the face of insertions and deletions, while reorganization of the entire file is not required in order to maintain performance.
+                In a B+ Tree file organization, leaf nodes store records instead of pointers. This type of file organization helps keep data records clustered 
+                even when there are insertions, deletions or updates.</p><br><br>
+                <p class="more"><img src="https://media.geeksforgeeks.org/wp-content/uploads/20230623132658/ezgifcom-gif-maker-(14)-768.webp" height="320" width="670"><br>
+                How a disk saves data from a file using a B+ Tree</p><br><br>
+                <p class="more">For more information, you can visit 
+                <a href="https://www.geeksforgeeks.org/introduction-of-b-tree/"  target="_blank"><i>this site</i></a>.</p><br>
+                <font size="1"><sup>*</sup>The images above were used from <a href="https://www.geeksforgeeks.org/introduction-of-b-tree/"  target="_blank">
+                <i>this site</i></a>. </font><br><br><br><br><br><br><br><br>
+            </div>
+            <div id="controls">
+                <p align="center">
+                    Here, this visualization can not only help you understand but also test the basic operations(insert, delete and find value or range of values) of a B+ Tree.
+                </p><br><br>
+                <table id="controlsTable" cellpadding="6" cellspacing="2">
+                    <tr>
+                        <td colspan="3">
+                            <form id="inputType">
+                                Are the values in the B+ Tree numbers or characters?
+                                <input type="radio" name="valueType" value="C" id="Char" checked="checked">Characters
+                                <input type="radio" name="valueType" value="N" id="Num">Numbers
+                            </form>
+                            <form id="maxDegree">
+                                Maximum Degree of the B+ Tree:
+                                <input type="radio" name="degree" value="3" id="degree3" checked="checked">3
+                                <input type="radio" name="degree" value="4" id="degree4">4
+                                <input type="radio" name="degree" value="5" id="degree5">5
+                                <input type="radio" name="degree" value="6" id="degree6">6
+                                <input type="radio" name="degree" value="7" id="degree7">7
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="4" id="insertInput">
+                            <button id="insertButton">Insert Value</button> &nbsp;&nbsp;
+                        </td>
+                        <td>
+                            <input type="text" size="4" id="deleteInput">
+                            <button type="button" id="deleteButton">Delete Value</button> &nbsp;&nbsp;
+                        </td>
+                        <td>
+                            <input type="text" size="4" id="findInput">
+                            <button type="button" id="findButton">Find Value</button> &nbsp;&nbsp;
+                        </td>
+                        <td>
+                            Range from: <input type="text" size="4" id="findInputRangeLower"> to: <input type="text" size="4" id="findInputRangeUpper">
+                            <button type="button" id="findRangeButton">Find Range</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </td>
+                        <td>
+                            <button type="button" id="clearButton">Clear Tree</button>
+                        </td>
+                    </tr>
+                </table>
+            </div><br>
+            
+            <div id="canvas">
+                <span>The B+ Tree elements will be depicted here!</span>
+            </div><br><br>
+
+            <script type="text/javascript" src="events.js"></script>
+        </div>
+        
+
+        <footer>
+            <p>
+                <br><br><br><font size="3">Made by: &nbsp;<i>Vasilis Kiouris</i> , 
+                Undergraduate Student at the School of Applied Mathematics and Physical Sciences (<a href="http://semfe.ntua.gr/el/" target="_blank"><i>SAMPS</i></a>) 
+                of the National Technical University of Athens (<a href="https://www.ntua.gr/el/" target="_blank"><i>NTUA</i></a>)<br>
+                Find me at:
+                </font>
+                <ul>
+                    <p class="pfooter">
+                        <span><i class="fa fa-github" ></i>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbqj9Ii13d6hx5a9kyLnC5A8A96LDSaSZv_w&s" width="20px" height="20px" align="center"> 
+                        Github : &nbsp;<a href="https://github.com/vkiou?tab=repositories" target="_blank">vkiou</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" width="20px" height="20px" align="center"> 
+                        Gmail : &nbsp;<a href="mailto:vkiouris@gmail.com" target="_blank">vkiouris@gmail.com</a></span>
+                        <span><font size="2">&copy; 2024 Vasilis Kiouris, All Rights Reserved.</font></span>
+                    </p>
+                </ul>  
+            </p>
+               
+        </footer>
+
+    </body>
+
+</html>
