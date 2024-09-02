@@ -5,4 +5,4 @@ The files in this repository are:
 * working.js : A javascript file that implements the algortihms for the B+ Tree, according to the book.
 * style.css : A css file to style the page.
 
-The URL to visit the site is this: D:/SEMFE/8th%20Semester/Databases/Bonus%20Project/MyB+TreeVisualization.html
+The URL to visit the site is this: file:///D:/SEMFE/8th%20Semester/Databases/Bonus%20Project/MyB+TreeVisualization.html
